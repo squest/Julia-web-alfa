@@ -3,7 +3,7 @@ using Mustache
 
 app = Morsel.app()
 
-tmpl = open (readall,"one.html")
+tmpl = open (readall,"/Users/questmac/public/lambda/juliaweb/one.html")
 
 route(app, GET | POST | PUT, "/<user>") do req, res
     nama = convert (ASCIIString, req.params [:user])
@@ -15,3 +15,4 @@ get(app, "/about") do req, res
 end
 
 get (app,"/mas") do req,res "This is an app" end
+start(app, 3000)
